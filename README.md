@@ -1,4 +1,7 @@
-# Trading Advisor
+# Trading Advisor 
+
+>[!CAUTION]
+>(this code For Educational Purposes Only, Not Financial Advice)
 
 A Streamlit application for exploring long/short trading playbooks using technical indicators on crypto, stocks, and commodities.
 
