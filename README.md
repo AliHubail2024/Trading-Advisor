@@ -26,7 +26,7 @@ A Streamlit application for exploring long/short trading playbooks using technic
 
 - Streamlit UI with sidebar controls
 - Technical indicators and signal generation
-- Multiple data sources (e.g., Yahoo Finance; Binance via ccxt if configured)
+- Multiple data sources (e.g., Binance via ccxt if configured)
 - Plotly charts with overlays (EMA/SMA/RSI/ADX/Volume, etc.)
 
 > [!TIP]
@@ -97,13 +97,11 @@ streamlit run app.py
 
 2. In the sidebar:
    
- * Select a data source (e.g., Yahoo Finance BTC-USD).
+ * Select a data source (e.g., Binance BTC-USD).
  * Choose entry and anchor timeframes.
  * Adjust indicator and risk settings.
  * Toggle overlays (EMA/SMA/RSI/ADX/Volume, etc.).
 
->[!NOTE]
-> Yahoo Finance requires no API keys. Binance via ccxt typically uses public endpoints for OHLCV.
 
 ![App screenshot](assets/images/BTC_advice_Sample.png) -->
 
@@ -111,7 +109,7 @@ streamlit run app.py
 ```text
 Trading-Advisor/
 ├─ app.py            # Streamlit UI and main pipeline
-├─ data.py           # Data loaders (Yahoo Finance, Binance via ccxt)
+├─ data.py           # Data loaders ( Binance via ccxt)
 ├─ indicators.py     # Technical indicators
 ├─ strategy.py       # Signal generation logic
 ├─ plotter.py        # Plotly chart construction

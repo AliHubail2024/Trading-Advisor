@@ -85,7 +85,7 @@ with st.sidebar:
     source_choice = st.selectbox(
         "Source",
         # ["Yahoo Finance", "Binance Perps (USDT-M)", "Binance Spot"],
-        ["Yahoo Finance", "Binance Perps (USDT-M)", "Binance Spot"],
+        ["Binance Perps (USDT-M)", "Binance Spot"],
         index=1,
     )
 
