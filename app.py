@@ -306,6 +306,7 @@ try:
             })
         st.stop()
 
+
     # Prepare higher timeframe anchor
     df_anchor = prepare_anchor(df_entry, anchor_tf, entry_tf=entry_tf)
 
