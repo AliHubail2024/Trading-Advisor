@@ -16,8 +16,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="BTC Long/Short Playbook", layout="wide", page_icon="📈")
-st.title("📈 BTC Long/Short Playbook")
+st.set_page_config(page_title="BTC Long/Short Playbook (Not Finincal Advice only for education)", layout="wide", page_icon="📈")
+st.title("📈 BTC Long/Short Playbook  (Not Finincal Advice only for education)")
 
 # ---------- Helper: import with fallback between flat and src.* ----------
 def import_with_fallback(name_plain: str, name_pkg: str):
@@ -85,7 +85,7 @@ with st.sidebar:
     source_choice = st.selectbox(
         "Source",
         ["Yahoo Finance", "Binance Perps (USDT-M)", "Binance Spot"],
-        index=0,
+        index=1,
     )
 
     if source_choice == "Yahoo Finance":
@@ -184,26 +184,26 @@ with st.sidebar:
             st.rerun()
 
 # ---------- Optional: environment + module info for quick troubleshooting ----------
-with st.expander("Environment", expanded=False):
-    st.write({
-        "python": sys.version,
-        "platform": platform.platform(),
-        "cwd": os.getcwd(),
-        "__file__": os.path.abspath(__file__),
-    })
-with st.expander("Loaded module files", expanded=False):
-    def fpath(m):
-        try:
-            return inspect.getfile(m)
-        except Exception:
-            return "<unknown>"
-    st.json({
-        "settings": fpath(settings_mod),
-        "data": fpath(data_mod),
-        "indicators": fpath(indicators_mod),
-        "strategy": fpath(strategy_mod),
-        "plotter": fpath(plotter_mod),
-    })
+# with st.expander("Environment", expanded=False):
+#     st.write({
+#         "python": sys.version,
+#         "platform": platform.platform(),
+#         "cwd": os.getcwd(),
+#         "__file__": os.path.abspath(__file__),
+#     })
+# with st.expander("Loaded module files", expanded=False):
+#     def fpath(m):
+#         try:
+#             return inspect.getfile(m)
+#         except Exception:
+#             return "<unknown>"
+#     st.json({
+#         "settings": fpath(settings_mod),
+#         "data": fpath(data_mod),
+#         "indicators": fpath(indicators_mod),
+#         "strategy": fpath(strategy_mod),
+#         "plotter": fpath(plotter_mod),
+#     })
 
 # ---------- Helpers for Scalping (local fallback) ----------
 def _ensure_scalping_indicators_local(df: pd.DataFrame) -> pd.DataFrame:
@@ -357,14 +357,14 @@ try:
         st.markdown(latest_info_md)
     st.plotly_chart(fig, use_container_width=True, theme="streamlit")
 
-    with st.expander("Diagnostics", expanded=debug_mode):
-        st.write("Entry rows:", len(df_entry), " • Anchor rows:", len(df_anchor))
-        try:
-            st.write("Entry date range:", df_entry.index.min(), "→", df_entry.index.max())
-        except Exception:
-            pass
-        st.write("Columns:", list(df_entry.columns))
-        st.write({"Selected source": source_choice, "Selected symbol": selected_symbol})
+    # with st.expander("Diagnostics", expanded=debug_mode):
+    #     st.write("Entry rows:", len(df_entry), " • Anchor rows:", len(df_anchor))
+    #     try:
+    #         st.write("Entry date range:", df_entry.index.min(), "→", df_entry.index.max())
+    #     except Exception:
+    #         pass
+    #     st.write("Columns:", list(df_entry.columns))
+    #     st.write({"Selected source": source_choice, "Selected symbol": selected_symbol})
 
 except Exception as e:
     st.error("Unhandled exception during app execution:")
