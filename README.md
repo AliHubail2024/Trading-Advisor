@@ -102,6 +102,8 @@ streamlit run app.py
 >[!NOTE]
 > Yahoo Finance requires no API keys. Binance via ccxt typically uses public endpoints for OHLCV.
 
+![App screenshot](assets/images/BTC_advice_Sample.png) -->
+
 ***Project structure***
 ```text
 Trading-Advisor/
