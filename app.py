@@ -16,8 +16,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="BTC Long/Short Playbook (Not Finincal Advice only for education)", layout="wide", page_icon="📈")
-st.title("📈 BTC Long/Short Playbook  (Not Finincal Advice only for education)")
+st.set_page_config(page_title="Trading Advisor (Not Finincal Advice only for education)", layout="wide", page_icon="📈")
+st.title("📈 Trading Advisor  (Not Finincal Advice only for education)")
 
 # ---------- Helper: import with fallback between flat and src.* ----------
 def import_with_fallback(name_plain: str, name_pkg: str):
@@ -84,6 +84,7 @@ with st.sidebar:
     st.header("Data")
     source_choice = st.selectbox(
         "Source",
+        # ["Yahoo Finance", "Binance Perps (USDT-M)", "Binance Spot"],
         ["Yahoo Finance", "Binance Perps (USDT-M)", "Binance Spot"],
         index=1,
     )
