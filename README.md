@@ -29,8 +29,6 @@ A Streamlit application for exploring long/short trading playbooks using technic
 - Multiple data sources (e.g., Binance via ccxt if configured)
 - Plotly charts with overlays (EMA/SMA/RSI/ADX/Volume, etc.)
 
-> [!TIP]
-> GitHub automatically creates an in‑page table of contents for files with two or more headings. You can also use the links above to jump to sections.
 
 ---
 
@@ -57,10 +55,7 @@ sudo apt install -y python3-venv
 ```
 
 
-***Quickstart*** 
 
->[!IMPORTANT]
->Run the commands for your OS in a terminal. Fenced code blocks like the ones below preserve formatting and are the recommended way to share commands on GitHub.
 
 ***macOS/Linux***
 
